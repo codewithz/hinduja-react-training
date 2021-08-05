@@ -3,21 +3,24 @@ import ProductComponent from './ProductComponent'
 
 export default function CartHome() {
 
-    const data=['A','B','C','D','E'];
+   const orders=[
+       {product:'Bread',qty:1},
+       {product:'Butter',qty:2},
+       {product:'Jam',qty:1},
+       {product:'Maggi',qty:5},
+       {product:'Eggs',qty:6},
+   ]
 
-    const [tags,setTags]=useState(data);
+   const [cart,setCart]=useState(orders);
 
     return (
         <div>
-            <ProductComponent />
+            
+           {cart.map(item=>
+                <ProductComponent product={item.product} />
+            )}
           
-            <ul>
-                {
-                    tags.map(element =>
-                    <li>{element}</li>
-                        )
-                }
-            </ul>
+           
             
             
         </div>

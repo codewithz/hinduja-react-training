@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function ProductComponent() {
+export default function ProductComponent(props) {
 
     const [count, setCount] = useState(0);
 
@@ -35,7 +35,7 @@ export default function ProductComponent() {
 
     return (
         <div>
-            <label>Product Name</label>
+            <label>{props.product}</label>
             <br />
             <button className="btn btn-danger btn-sm" onClick={handleDecrement}>Decrement</button>
             <span className={getBadgeClasses()}> {formatCount()}  </span>
